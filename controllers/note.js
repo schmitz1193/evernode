@@ -1,7 +1,7 @@
 //CONTROLLERS - note.js
 'use strict';
 
-const Note = require('../models/note');
+
 
 module.exports = {
   edit (req, res) {
