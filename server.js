@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const logger = require('./lib/logger');
 const note = require('./routes/note');
 
 
@@ -22,8 +23,10 @@ app.get('/', (req, res) => {
   res.send('Server Running');
 });
 
-app.use(note);
+//log request to db function
+app.use(logger);
 
+app.use(note);
 
 //wrap listen into the mongoose .connect
 mongoose.connect('mongodb://localhost:27017/evernode',(err) => {
