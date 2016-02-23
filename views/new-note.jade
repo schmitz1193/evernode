@@ -6,12 +6,19 @@ else
 - var item = note || {title: '', text: ''}
 - var override = note ? '/' + note._id + '?_method=PUT' : ''
 
-form(method='POST', action='/notes')
+form(method='POST', action='/notes#{override}')
   .input-group
     label(for='title') Title
     input#title(type='text', name='title', placeholder='Enter Title', value='#{item.title}')
   .input-group
     label(for='text') Text
     textarea#text(name='text')= item.text
+  .input-group
+    label(for='cat') Category
+    select#cat(name='category')
+      for cat in categories
+        // - var selected = cat._id === note.category._id
+
+        option(value=cat._id, selected=selected)= cat.name
   .input-group
     input(type='submit', value='Save')

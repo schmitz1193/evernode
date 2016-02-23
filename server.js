@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const logger = require('./lib/logger');
 const note = require('./routes/note');
-
+const category = require('./routes/category');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -26,7 +26,9 @@ app.get('/', (req, res) => {
 //log request to db function
 app.use(logger);
 
+//routes
 app.use(note);
+app.use(category);
 
 //wrap listen into the mongoose .connect
 mongoose.connect('mongodb://localhost:27017/evernode',(err) => {
