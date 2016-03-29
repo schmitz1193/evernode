@@ -1,8 +1,8 @@
-# evernode
-##an in class execise
+# evernode:  an in class exercise at Nashville Software School
 
-# Nashville Software School project to create a simple Node.js journal app
 
-#Tools Used
+ -create a simple Node.js journal app
 
-##Node.js, Express, Jade, MongoDB, Mongoose, Nodemon
+ -Tools Used:
+
+- Node.js, Express, Jade, MongoDB, Mongoose, Nodemon
